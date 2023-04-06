@@ -1,0 +1,78 @@
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f3f3;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#poke-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  background-image: radial-gradient(circle at center, #f9f9f9 0%, #a8a2a2 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.poke-name {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.ability-title {
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+.poke-hp {
+  font-weight: bold;
+  color: #000000;
+}
+
+.poke-img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid #f3f3f3;
+}
+
+.poke-img img {
+  width: 100%;
+}
+
+.poke-abilities {
+  text-align: center;
+}
+
+.ability-description {
+  font-size: 0.8rem;
+  text-align: justify;
+}
+
