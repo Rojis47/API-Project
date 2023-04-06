@@ -8,17 +8,41 @@
     <title>Vite App</title>
   </head>
   <body>
+    <section>
+      <div class="container">
+        <header>
+          <img class="logo" title="Reset Game" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png" alt="Pokemon">
+        </header>
+      </div>
+
+    </section>
     
-    <div class="container">
-      <h2>Collections</h2>
-      <div id="poke-cards" class="poke-cards"></div>
-    </div>
-    
-    <div class="container">
-      <h2>Favorites</h2>
-      <div id="favorite-cards" class="poke-cards"></div>
-    </div>
-    
+    <section class="main">
+       <div class="container">
+        <div class="buttons-wrapper">
+          <button data-display="collection" class="favorite-btn filter-location header-btn active">Collected</button>
+          <button data-display="favorite" class="favorite-btn filter-location header-btn" href="">Favorites</button>
+        </div>
+        <ul class="pokemon-type-filter ul-defaults-none">
+          <li data-filter="all" class="filter-btn filter-link type-all active">All</li>
+          <li data-filter="fire" class="filter-btn filter-link type-fire">Fire 0</li>
+          <li data-filter="bug" class="filter-btn filter-link type-bug">Bug 0</li>
+          <li data-filter="grass" class="filter-btn filter-link type-grass">Grass 0</li>
+          <li data-filter="normal" class="filter-btn filter-link type-normal">Normal 0</li>
+          <li data-filter="water" class="filter-btn filter-link type-water">Water 0</li>
+        </ul>
+          <div id="poke-cards" class="poke-cards active">
+          <!-- cards will be generated here -->
+          </div>
+          <div id="about" class=" about-page full-site-modal page-block" data-animation="zoomInOut">
+            <div id="favorite-cards" class="poke-cards"></div>
+            <!-- favorite cards display here -->
+        </div>
+    </section>
+
+    <!--? modals -->
+
+
     <script type="module" src="/js/app.js"></script>
   </body>
 </html>

@@ -1,11 +1,78 @@
+section,
+footer,
+header,
+nav {
+    display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 body {
+  background-color: #242424;
+}
+
+.container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+  max-width: 1140px;
+}
+
+.ul-defaults-none {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* defaults */
+
+header {
+  text-align: center;
+}
+
+header img {
+  max-width: 40rem;
+}
+
+.buttons-wrapper {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main { 
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f3f3f3;
+}
+
+collections-container {
+  margin: auto;
+}
+
+.pokemon-type-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem 0;
+}
+
+.pokemon-type-filter li {
+  width: 10rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .card-header {
@@ -15,7 +82,8 @@ body {
   margin-bottom: 1rem;
 }
 
-#poke-cards {
+#poke-cards,
+#favorite-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -24,7 +92,7 @@ body {
 
 .card {
   position: relative;
-  background-image: radial-gradient(circle at center, #f9f9f9 0%, #a8a2a2 100%);
+  background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%), linear-gradient(to bottom, #FF4E4E, #FFA51B);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 200px;
@@ -36,58 +104,175 @@ body {
   overflow: hidden;
 }
 
-.favorite-btn {
-  background-color: #ff4757;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.card[data-item="normal"] {
+  background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%), linear-gradient(to bottom, #86A7FF, #5589FF);
 }
 
-.favorite-btn:hover {
-  background-color: #e8413e;
+.card[data-item="fire"] {
+  background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%), linear-gradient(to bottom, #FF4E4E, #FFA51B);
+}
+
+.card[data-item="water"] {
+  background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%), linear-gradient(to bottom, #4A7CFF, #557CFF);
+}
+.card[data-item="electric"] {
+background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%), linear-gradient(to bottom, #FFE84A, #FFC800);
+}
+
+.card[data-item="grass"] {
+background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%), linear-gradient(to bottom, #4AFFC8, #46FFA7);
+}
+
+.card[data-item="bug"] {
+background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%), linear-gradient(to bottom, #4AFF9E, #51FF6E);
+}
+
+/** buttons */
+
+.filter-btn {
+padding: 0.5rem 1rem;
+border: none;
+border-radius: 5px;
+color: white;
+cursor: pointer;
+transition: background-color 0.3s, transform 0.1s;
+}
+
+.filter-btn:hover {
+filter: brightness(90%);
+}
+
+.filter-btn.type-all {
+background-color: #8C8C8C;
+}
+
+.filter-btn.type-fire {
+background-color: #FF4E4E;
+}
+
+.filter-btn.type-bug {
+background-color: #4AFF9E;
+}
+
+.filter-btn.type-grass {
+background-color: #4AFFC8;
+}
+
+.filter-btn.type-normal {
+background-color: #86A7FF;
+}
+
+.filter-btn.type-water {
+background-color: #4A7CFF;
+}
+
+.filter-btn.active,
+.favorite-btn.active {
+  transform: scale(0.97);
+  background-color: #1f1f1f;
+}
+
+.filter-btn.type-fire.active {
+  color: #FF4E4E;
+}
+
+.filter-btn.type-bug.active {
+  color: #4AFF9E;
+}
+
+.filter-btn.type-grass.active {
+  color: #4AFFC8;
+}
+
+.filter-btn.type-normal.active {
+  color: #d1e1ff;
+}
+
+.filter-btn.type-water.active {
+  color: #b9d9ff;
+}
+
+.favorite-btn.active {
+  background-color: #ff3030;
+}
+
+.favorite-btn {
+background-color: #ff4757;
+color: white;
+border: none;
+border-radius: 5px;
+padding: 0.5rem 1rem;
+font-size: 0.8rem;
+cursor: pointer;
+transition: background-color 0.3s, transform 0.1s;
+}
+
+.favorite-btn.active {
+  background-color: #1f1f1f;
+}
+
+.poke-abilities .favorite-btn:hover {
+background-color: #e8413e;
+}
+
+.header-btn {
+font-weight: 700;
+font-size: 30px;
 }
 
 .poke-name {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  text-transform: capitalize;
-  margin: 0;
+display: flex;
+justify-content: space-between;
+width: 100%;
+text-transform: capitalize;
+margin: 0;
 }
 
 .ability-title {
-  font-size: 0.9rem;
-  text-transform: capitalize;
-  margin-bottom: 0.5rem;
+font-size: 0.9rem;
+text-transform: capitalize;
+margin-bottom: 0.5rem;
 }
 
 .poke-hp {
-  font-weight: bold;
-  color: #000000;
+font-weight: bold;
+color: #000000;
 }
 
 .poke-img {
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 3px solid #f3f3f3;
+background-color: #ffffff;
+margin: auto;
+width: 100px;
+height: 100px;
+overflow: hidden;
+border-radius: 50%;
+border: 3px solid #f3f3f3;
 }
 
 .poke-img img {
-  width: 100%;
+width: 100%;
 }
 
 .poke-abilities {
-  text-align: center;
+text-align: center;
 }
 
-.ability-description {
-  font-size: 0.8rem;
-  text-align: justify;
+@keyframes shine {
+0% {
+transform: translateX(-150%);
+opacity: 0;
+}
+50% {
+opacity: 1;
+}
+100% {
+transform: translateX(150%);
+opacity: 0
+}
 }
 
+@media (max-width:767px) {
+  header img {
+    max-width: 20rem;
+  }
+}
