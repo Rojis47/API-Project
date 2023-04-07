@@ -120,7 +120,7 @@ background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 25
 }
 
 .card[data-item="grass"] {
-background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%), linear-gradient(to bottom, #4AFFC8, #46FFA7);
+background-image: radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 100%), linear-gradient(to bottom, #0a815e, #0a815e);
 }
 
 .card[data-item="bug"] {
@@ -135,7 +135,6 @@ border: none;
 border-radius: 5px;
 color: white;
 cursor: pointer;
-transition: background-color 0.3s, transform 0.1s;
 }
 
 .filter-btn:hover {
@@ -155,7 +154,7 @@ background-color: #4AFF9E;
 }
 
 .filter-btn.type-grass {
-background-color: #4AFFC8;
+background-color: #0a815e;
 }
 
 .filter-btn.type-normal {
@@ -181,7 +180,7 @@ background-color: #4A7CFF;
 }
 
 .filter-btn.type-grass.active {
-  color: #4AFFC8;
+  color: #0a815e;
 }
 
 .filter-btn.type-normal.active {
@@ -204,7 +203,9 @@ border-radius: 5px;
 padding: 0.5rem 1rem;
 font-size: 0.8rem;
 cursor: pointer;
-transition: background-color 0.3s, transform 0.1s;
+transition: background-color 0.3s, transform 0.1s, color 0.3s;
+position: relative;
+overflow: hidden;
 }
 
 .favorite-btn.active {
@@ -269,10 +270,4 @@ opacity: 1;
 transform: translateX(150%);
 opacity: 0
 }
-}
-
-@media (max-width:767px) {
-  header img {
-    max-width: 20rem;
-  }
 }

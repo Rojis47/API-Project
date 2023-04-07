@@ -21,16 +21,12 @@
        <div class="container">
         <div class="buttons-wrapper">
           <button data-display="collection" class="favorite-btn filter-location header-btn active">Collected</button>
+          <button id="sort-az" class="favorite-btn header-btn">A-Z</button>
+          <button id="sort-za" class="favorite-btn header-btn">Z-A</button>
           <button data-display="favorite" class="favorite-btn filter-location header-btn" href="">Favorites</button>
         </div>
-        <ul class="pokemon-type-filter ul-defaults-none">
-          <li data-filter="all" class="filter-btn filter-link type-all active">All</li>
-          <li data-filter="fire" class="filter-btn filter-link type-fire">Fire 0</li>
-          <li data-filter="bug" class="filter-btn filter-link type-bug">Bug 0</li>
-          <li data-filter="grass" class="filter-btn filter-link type-grass">Grass 0</li>
-          <li data-filter="normal" class="filter-btn filter-link type-normal">Normal 0</li>
-          <li data-filter="water" class="filter-btn filter-link type-water">Water 0</li>
-        </ul>
+        <ul id="filter-btn" class="pokemon-type-filter ul-defaults-none">
+         </ul>
           <div id="poke-cards" class="poke-cards active">
           <!-- cards will be generated here -->
           </div>
@@ -43,6 +39,7 @@
     <!--? modals -->
 
 
-    <script type="module" src="/js/app.js"></script>
+    <!-- <script type="module" src="/js/app.js"></script> -->
+    <script src="/js/main.js"></script>
   </body>
 </html>
