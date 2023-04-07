@@ -32,8 +32,8 @@ const filterCards = () => {
 };
 
 //* filter a-z
-const sortCards = (order) => {
-  const cardsContainer = document.getElementById("poke-cards");
+const sortCards = (order, containerId) => {
+  const cardsContainer = document.getElementById(containerId);
   const cards = Array.from(cardsContainer.children);
 
   cards.sort((a, b) => {
@@ -55,11 +55,13 @@ const sortCards = (order) => {
 };
 
 document.getElementById("sort-az").addEventListener("click", () => {
-  sortCards("az");
+  sortCards("az", "poke-cards");
+  sortCards("az", "favorite-cards");
 });
 
 document.getElementById("sort-za").addEventListener("click", () => {
-  sortCards("za");
+  sortCards("za", "poke-cards");
+  sortCards("za", "favorite-cards");
 });
 
 //* Initialize filter event listeners

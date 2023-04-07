@@ -45,9 +45,21 @@ header img {
   max-width: 40rem;
 }
 
+.buttons-wrapper button {
+  margin-top: 2rem;
+}
+
 .buttons-wrapper {
-  margin: 30px 0;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fav-wrapper,
+.az-wrapper{
+  display: flex;
+  gap: 1rem;
   justify-content: space-around;
 }
 
@@ -258,16 +270,13 @@ width: 100%;
 text-align: center;
 }
 
-@keyframes shine {
-0% {
-transform: translateX(-150%);
-opacity: 0;
-}
-50% {
-opacity: 1;
-}
-100% {
-transform: translateX(150%);
-opacity: 0
-}
+@media (max-width:767px) {
+  header img {
+    max-width: 15rem;
+  }
+
+  .buttons-wrapper {
+    gap: 3rem;
+    justify-content: center;
+  }
 }
